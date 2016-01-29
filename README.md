@@ -1,1 +1,1 @@
-# composer
+# soajs.composer
