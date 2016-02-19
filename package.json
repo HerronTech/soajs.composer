@@ -19,7 +19,8 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "async": "*"
+    "async": "*",
+    "elasticsearch": "*"
   },
   "peerDependencies": {
     "soajs": "0.2.*"
