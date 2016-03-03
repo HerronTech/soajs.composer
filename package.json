@@ -20,7 +20,8 @@
   "devDependencies": {},
   "dependencies": {
     "async": "*",
-    "elasticsearch": "*"
+    "elasticsearch": "*",
+    "elasticsearch-deletebyquery": "*"
   },
   "peerDependencies": {
     "soajs": "0.2.*"
