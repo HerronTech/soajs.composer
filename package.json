@@ -17,13 +17,20 @@
   "scripts": {
     "test": "grunt test"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt":"*",
+    "grunt-contrib-jshint":"*",
+    "grunt-jsdoc" : "*",
+    "grunt-contrib-clean" : "*",
+    "grunt-mocha-test" : "*",
+    "grunt-env" : "*",
+    "grunt-istanbul" : "*",
+    "grunt-coveralls" : "*"
+  },
   "dependencies": {
     "async": "*",
     "elasticsearch": "*",
-    "elasticsearch-deletebyquery": "*"
-  },
-  "peerDependencies": {
-    "soajs": "0.2.*"
+    "elasticsearch-deletebyquery": "*",
+    "soajs": "0.3.*"
   }
 }
