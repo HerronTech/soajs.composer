@@ -31,6 +31,6 @@
     "async": "*",
     "elasticsearch": "*",
     "elasticsearch-deletebyquery": "*",
-    "soajs": "soajs/soajs.git#develop"
+    "soajs": "git+https://github.com/soajs/soajs.git#develop"
   }
 }
