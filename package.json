@@ -28,9 +28,9 @@
     "grunt-coveralls" : "*"
   },
   "dependencies": {
-    "async": "*",
+    "async": "1.5.2",
     "elasticsearch": "*",
     "elasticsearch-deletebyquery": "*",
-    "soajs": "git+https://github.com/soajs/soajs.git#develop"
+    "soajs": "0.3.x"
   }
 }
