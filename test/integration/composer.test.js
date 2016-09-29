@@ -28,7 +28,77 @@ describe("testing composer", function(){
 			// console.log(JSON.stringify(services, null, 2));
 			composer.deploy(__dirname + "/../data/service3.test.js", function(error){
 				assert.ifError(error);
-				process.exit();
+				done();
+			});
+		});
+
+		it("success - call service get api", function(done){
+			var params = {
+				uri: 'http://localhost:4081/',
+				headers: {
+					'Content-Type': 'application/json',
+					'key' : helper.getKey()
+				},
+				json: true
+			};
+			helper.requester("get", params, function(error, body){
+				assert.ifError(error);
+				assert.ok(body);
+				done();
+			});
+		});
+
+		it("success - call service get api reuse connections", function(done){
+			var params = {
+				uri: 'http://localhost:4081/',
+				headers: {
+					'Content-Type': 'application/json',
+					'key' : helper.getKey()
+				},
+				json: true
+			};
+			helper.requester("get", params, function(error, body){
+				assert.ifError(error);
+				assert.ok(body);
+				done();
+			});
+		});
+
+		it("success - call service get api create es connection", function(done){
+			var params = {
+				uri: 'http://localhost:4081/',
+				headers: {
+					'Content-Type': 'application/json',
+					'key' : helper.getKey()
+				},
+				json: true,
+				qs: {
+					model: 'es'
+				}
+			};
+			helper.requester("get", params, function(error, body){
+				assert.ifError(error);
+				assert.ok(body);
+				done();
+			});
+		});
+
+		it("success - call service get api reuse es connection", function(done){
+			var params = {
+				uri: 'http://localhost:4081/',
+				headers: {
+					'Content-Type': 'application/json',
+					'key' : helper.getKey()
+				},
+				json: true,
+				qs: {
+					model: 'es'
+				}
+			};
+			helper.requester("get", params, function(error, body){
+				assert.ifError(error);
+				assert.ok(body);
+				done();
 			});
 		});
 

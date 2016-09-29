@@ -28,5 +28,12 @@ module.exports = {
 			"min": 1,
 			"max": 200
 		}
+	},
+	"model": {
+		"required": false,
+		"source": ["body.model", "query.model"],
+		"validation":{
+			"type": "string"
+		}
 	}
 };

@@ -6,15 +6,23 @@ module.exports = {
 		{
 			prefix: prefix,
 			name: "myDatabase",
-			multitenant: false
+			multitenant: false,
+			"mongo": true
 		},
 		{
 			prefix: prefix,
 			name: "myDatabase2",
-			multitenant: false
+			multitenant: true,
+			"mongo": true
+		},
+		{
+			prefix: prefix,
+			name: "esClient",
+			es: true
 		}
 	],
-
+	"modelPath": __dirname + "/lib/model/",
+	"model": "mongo",
 	"prerequisites": {
 		"cpu": '',
 		"memory": ''
@@ -26,6 +34,7 @@ module.exports = {
 	"requestTimeout": 30,
 	"requestTimeoutRenewal": 5,
 	"extKeyRequired": true,
+	"injection": true,
 	"session": true,
 	"oauth": false,
 	"errors": {
@@ -41,22 +50,20 @@ module.exports = {
 					"group": "Entries",
 					"groupMain": true
 				},
-				"mw": __dirname + "/lib/mw/list.js",
+				"mw": __dirname + "/lib/mw/list2.js",
 				"imfv": {
-					"commonFields": ["start", "limit"]
-				},
-				"model":"*"
+					"commonFields": ["start", "limit", "model"]
+				}
 			},
 			"/:id": {
 				"_apiInfo": {
 					"l": "Get One Entry",
 					"group": "Entries"
 				},
-				"mw": __dirname + "/lib/mw/get.js",
+				"mw": __dirname + "/lib/mw/get2.js",
 				"imfv": {
-					"commonFields": ["id"]
-				},
-				"model":"*"
+					"commonFields": ["id", "model"]
+				}
 			}
 		},
 		"post":{
@@ -65,11 +72,11 @@ module.exports = {
 					"l": "Add Entry",
 					"group": "Entries"
 				},
-				"mw": __dirname + "/lib/mw/push.js",
+				"mw": __dirname + "/lib/mw/push2.js",
 				"imfv": {
+					"commonFields": ["model"],
 					"custom": __dirname + "/lib/schemas/index.js"
-				},
-				"model":"*"
+				}
 			}
 		},
 		"put":{
@@ -78,12 +85,11 @@ module.exports = {
 					"l": "Edit Entry",
 					"group": "Entries"
 				},
-				"mw": __dirname + "/lib/mw/push.js",
+				"mw": __dirname + "/lib/mw/push2.js",
 				"imfv": {
-					"commonFields": ["id"],
+					"commonFields": ["id", "model"],
 					"custom": __dirname + "/lib/schemas/index.js"
-				},
-				"model":"*"
+				}
 			}
 		},
 		"delete":{
@@ -92,11 +98,10 @@ module.exports = {
 					"l": "Delete Entry",
 					"group": "Entries"
 				},
-				"mw": __dirname + "/lib/mw/delete.js",
+				"mw": __dirname + "/lib/mw/delete2.js",
 				"imfv": {
-					"commonFields": ["id"]
-				},
-				"model":"*"
+					"commonFields": ["id", "model"]
+				}
 			}
 		}
 	}
