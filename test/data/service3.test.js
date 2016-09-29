@@ -4,25 +4,27 @@ module.exports = {
 	"type": "service",
 	"dbs": [
 		{
-			prefix: prefix,
-			name: "myDatabase",
-			multitenant: false,
+			"prefix": prefix,
+			"name": "myDatabase",
+			"multitenant": false,
 			"mongo": true
 		},
 		{
-			prefix: prefix,
-			name: "myDatabase2",
-			multitenant: true,
+			"prefix": prefix,
+			"name": "myDatabase2",
+			"multitenant": true,
 			"mongo": true
 		},
 		{
-			prefix: prefix,
-			name: "esClient",
-			es: true
+			"prefix": prefix,
+			"name": "esClient",
+			"es": true
 		}
 	],
-	"modelPath": __dirname + "/lib/model/",
-	"model": "mongo",
+	"models":{
+		"path": __dirname + "/lib/model/",
+		"name": "mongo"
+	},
 	"prerequisites": {
 		"cpu": '',
 		"memory": ''

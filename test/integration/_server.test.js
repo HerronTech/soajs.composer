@@ -17,5 +17,10 @@ describe("importing sample data", function () {
 			});
 		});
 	});
+
+	after(function(){
+		console.log("test the composer");
+		require("./composer.test.js");
+	});
 });
 
