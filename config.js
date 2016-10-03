@@ -14,6 +14,7 @@ module.exports = {
 		409: "Invalid or no schema found !",
 		410: "Invalid commonFields found !",
 		411: "Invalid or no schema found for job %api% !",
-		412: "Invalid or no middleware found for job %api% !"
+		412: "Invalid or no middleware found for job %api% !",
+		413: "Invalid or no model found !"
 	}
 };
