@@ -6,8 +6,8 @@ var composer = helper.requireModule("index");
 describe("testing composer", function () {
 	
 	describe("testing services", function () {
-		afterEach(function(done){
-			setTimeout(function(){
+		afterEach(function (done) {
+			setTimeout(function () {
 				
 				console.log("------");
 				done();
@@ -49,97 +49,105 @@ describe("testing composer", function () {
 			});
 		});
 		
-		it("success - call service get api", function(done){
+		it("success - call service get api", function (done) {
 			var params = {
 				uri: 'http://localhost:4060/',
 				headers: {
 					'Content-Type': 'application/json',
-					'key' : helper.getKey()
+					'key': helper.getKey()
 				},
 				json: true,
-				"qs":{
+				"qs": {
 					"model": "es"
 				}
 			};
-			helper.requester("get", params, function(error, body){
-				assert.ifError(error);
-				assert.ok(body);
-				done();
-			});
-		});
-
-		it("success - call service get api reuse connections", function(done){
-			var params = {
-				uri: 'http://localhost:4060/',
-				headers: {
-					'Content-Type': 'application/json',
-					'key' : helper.getKey()
-				},
-				json: true
-			};
-			helper.requester("get", params, function(error, body){
-				assert.ifError(error);
-				assert.ok(body);
-				done();
-			});
-		});
-
-		it("success - call service get api create es connection", function(done){
-			var params = {
-				uri: 'http://localhost:4060/',
-				headers: {
-					'Content-Type': 'application/json',
-					'key' : helper.getKey()
-				},
-				json: true,
-				qs: {
-					model: 'es'
-				}
-			};
-			helper.requester("get", params, function(error, body){
-				assert.ifError(error);
-				assert.ok(body);
-				done();
-			});
-		});
-
-		it("success - call service get api reuse es connection", function(done){
-			var params = {
-				uri: 'http://localhost:4060/',
-				headers: {
-					'Content-Type': 'application/json',
-					'key' : helper.getKey()
-				},
-				json: true,
-				qs: {
-					model: 'es'
-				}
-			};
-			helper.requester("get", params, function(error, body){
+			helper.requester("get", params, function (error, body) {
 				assert.ifError(error);
 				assert.ok(body);
 				done();
 			});
 		});
 		
-		it("success - gets service schema", function(done){
+		it("success - call service get api reuse connections", function (done) {
+			var params = {
+				uri: 'http://localhost:4060/',
+				headers: {
+					'Content-Type': 'application/json',
+					'key': helper.getKey()
+				},
+				json: true
+			};
+			helper.requester("get", params, function (error, body) {
+				assert.ifError(error);
+				assert.ok(body);
+				done();
+			});
+		});
+		
+		it("success - call service get api create es connection", function (done) {
+			var params = {
+				uri: 'http://localhost:4060/',
+				headers: {
+					'Content-Type': 'application/json',
+					'key': helper.getKey()
+				},
+				json: true,
+				qs: {
+					model: 'es'
+				}
+			};
+			helper.requester("get", params, function (error, body) {
+				assert.ifError(error);
+				assert.ok(body);
+				done();
+			});
+		});
+		
+		it("success - call service get api reuse es connection", function (done) {
+			var params = {
+				uri: 'http://localhost:4060/',
+				headers: {
+					'Content-Type': 'application/json',
+					'key': helper.getKey()
+				},
+				json: true,
+				qs: {
+					model: 'es'
+				}
+			};
+			helper.requester("get", params, function (error, body) {
+				assert.ifError(error);
+				assert.ok(body);
+				done();
+			});
+		});
+		
+		it("success - gets service schema", function (done) {
 			var params = {
 				uri: 'http://localhost:4060/schema',
 				headers: {
 					'Content-Type': 'application/json',
-					'key' : helper.getKey()
+					'key': helper.getKey()
 				},
 				json: true
 			};
-			helper.requester("get", params, function(error, body){
+			helper.requester("get", params, function (error, body) {
 				assert.ifError(error);
 				assert.ok(body);
 				done();
-			
+				
 			});
 		});
 		
-
+		it("success, should stop service3", function (done) {
+			composer.stopService('dummy', function (error) {
+				assert.ifError(error);
+				done();
+			});
+		});
+	});
+	
+	describe("invalid configuraiton tests", function(){
 		
 		
 		// it("success - call service get schema", function(done){
@@ -327,21 +335,12 @@ describe("testing composer", function () {
 			});
 		});
 		
-		it("success, should stop service3", function (done) {
-			composer.stopService('dummy', function (error) {
-				assert.ifError(error);
-				done();
-			});
-		});
-		
 		it("fail, no model", function(done){
 			composer.deploy(__dirname + "/../data/invalid15.service.test.js", function(error){
 				assert.ok(error);
 				done();
 			});
 		});
-
-
 	});
 
 	describe.skip("testing daemons", function() {
