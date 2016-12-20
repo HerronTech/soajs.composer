@@ -326,13 +326,22 @@ describe("testing composer", function () {
 				done();
 			});
 		});
-
+		
 		it("success, should stop service3", function (done) {
 			composer.stopService('dummy', function (error) {
 				assert.ifError(error);
 				done();
 			});
 		});
+		
+		it("fail, no model", function(done){
+			composer.deploy(__dirname + "/../data/invalid15.service.test.js", function(error){
+				assert.ok(error);
+				done();
+			});
+		});
+
+
 	});
 
 	describe.skip("testing daemons", function() {
