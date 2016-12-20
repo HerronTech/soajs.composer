@@ -1,24 +1,23 @@
 "use strict";
-var prefix = "test_";
 module.exports = {
 	"type": "service",
 	"dbs": [
 		{
-			"prefix": prefix,
-			"name": "myDatabase",
-			"multitenant": false,
-			"mongo": true
+			prefix: "test_",
+			name: "myDatabase",
+			multitenant: false,
+			mongo: true
 		},
 		{
-			"prefix": prefix,
-			"name": "myDatabase2",
-			"multitenant": true,
-			"mongo": true
+			prefix: "test_",
+			name: "myDatabase2",
+			multitenant: true,
+			mongo: true
 		},
 		{
-			"prefix": prefix,
-			"name": "esClient",
-			"es": true
+			prefix: "test_",
+			name: "esClient",
+			es: true
 		}
 	],
 	"models":{
@@ -29,10 +28,10 @@ module.exports = {
 		"cpu": '',
 		"memory": ''
 	},
-	"serviceName": "dummy3",
+	"serviceName": "dummy",
 	"serviceGroup": "dummy",
 	"serviceVersion": 1,
-	"servicePort": 4081,
+	"servicePort": 4060,
 	"requestTimeout": 30,
 	"requestTimeoutRenewal": 5,
 	"extKeyRequired": true,

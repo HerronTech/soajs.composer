@@ -1,10 +1,10 @@
 "use strict";
-var prefix = "test_";
+
 module.exports = {
 	"type": "service",
 	"dbs": [
 		{
-			prefix: prefix,
+			prefix: "test_",
 			name: "myDatabase",
 			multitenant: false
 		}
@@ -14,10 +14,10 @@ module.exports = {
 		"cpu": '',
 		"memory": ''
 	},
-	"serviceName": "dummy2",
+	"serviceName": "dummy",
 	"serviceGroup": "dummy",
 	"serviceVersion": 1,
-	"servicePort": 4080,
+	"servicePort": 4060,
 	"requestTimeout": 30,
 	"requestTimeoutRenewal": 5,
 	"extKeyRequired": true,

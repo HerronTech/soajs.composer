@@ -1,20 +1,20 @@
 "use strict";
-var prefix = "test_";
+
 module.exports = {
 	"type": "service",
 	"dbs": [
 		{
-			prefix: prefix,
+			prefix: "test_",
 			name: "myDatabase",
 			multitenant: false
 		},
 		{
-			prefix: prefix,
+			"prefix": "test_",
 			name: "urac",
 			multitenant: true
 		},
 		{
-			prefix: prefix,
+			"prefix": "test_",
 			name: "esClient",
 			es: true
 		}

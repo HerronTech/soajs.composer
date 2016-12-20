@@ -1,5 +1,5 @@
 "use strict";
-var prefix = "test_";
+
 module.exports = {
 	"type": "service",
 	"prerequisites": {
@@ -10,7 +10,7 @@ module.exports = {
 	"serviceGroup": "tester",
 	"dbs": [
 		{
-			prefix: prefix,
+			prefix: "test_",
 			name: "myDatabase",
 			multitenant: false
 		},

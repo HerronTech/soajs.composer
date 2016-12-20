@@ -37,5 +37,23 @@ module.exports = {
 				});
 				break;
 		}
+	},
+	
+	getService: function(serviceName){
+		return composer.getContext(serviceName, 'service');
+	},
+	
+	stopService: function(serviceName, cb){
+		var context = composer.getContext(serviceName, 'service');
+		context.stop(cb);
 	}
+	
+	// getDaemon: function(daemoName){
+	// 	return composer.getContext(daemoName, 'daemon');
+	// },
+	//
+	// stopDaemon: function(daemoName, cb){
+	// 	var context = composer.getContext(daemoName, 'daemon');
+	// 	context.stop(cb);
+	// }
 };
