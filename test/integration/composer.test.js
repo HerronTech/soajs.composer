@@ -145,6 +145,125 @@ describe("testing composer", function () {
 				done();
 			});
 		});
+		
+		it("success, should deploy service4", function (done) {
+			composer.deploy(__dirname + "/../data/service4.test.js", function (error) {
+				setTimeout(function () {
+						assert.ifError(error);
+						done();
+				}, 1000);
+			});
+		});
+		
+		it("success - calls /get (old style service) route", function (done) {
+			var params = {
+				uri: 'http://localhost:4060/get',
+				headers: {
+					'Content-Type': 'application/json',
+					'key': helper.getKey()
+				},
+				json: true
+			};
+			helper.requester("get", params, function (error, body) {
+				assert.ifError(error);
+				assert.ok(body);
+				done();
+				
+			});
+		});
+		
+		it("success - call service get (old style) api create es connection", function (done) {
+			var params = {
+				uri: 'http://localhost:4060/get',
+				headers: {
+					'Content-Type': 'application/json',
+					'key': helper.getKey()
+				},
+				json: true,
+				qs: {
+					model: 'es'
+				}
+			};
+			helper.requester("get", params, function (error, body) {
+				assert.ifError(error);
+				assert.ok(body);
+				done();
+			});
+		});
+		
+		it("success - call service get (old style) api reuse es connection", function (done) {
+			var params = {
+				uri: 'http://localhost:4060/get',
+				headers: {
+					'Content-Type': 'application/json',
+					'key': helper.getKey()
+				},
+				json: true,
+				qs: {
+					model: 'es'
+				}
+			};
+			helper.requester("get", params, function (error, body) {
+				assert.ifError(error);
+				assert.ok(body);
+				done();
+			});
+		});
+		
+		it("success - call service get with mw info false", function (done) {
+			var params = {
+				uri: 'http://localhost:4060/gettwo',
+				headers: {
+					'Content-Type': 'application/json',
+					'key': helper.getKey()
+				},
+				json: true
+			};
+			helper.requester("get", params, function (error, body) {
+				assert.ifError(error);
+				assert.ok(body);
+				done();
+			});
+		});
+		
+		it("success - call service get with mw info.error", function (done) {
+			var params = {
+				uri: 'http://localhost:4060/getthree',
+				headers: {
+					'Content-Type': 'application/json',
+					'key': helper.getKey()
+				},
+				json: true
+			};
+			helper.requester("get", params, function (error, body) {
+				assert.ifError(error);
+				assert.ok(body);
+				done();
+			});
+		});
+		
+		it("success - call service get with mw info.error as an array", function (done) {
+			var params = {
+				uri: 'http://localhost:4060/getfour',
+				headers: {
+					'Content-Type': 'application/json',
+					'key': helper.getKey()
+				},
+				json: true
+			};
+			helper.requester("get", params, function (error, body) {
+				assert.ifError(error);
+				assert.ok(body);
+				done();
+			});
+		});
+		
+		it("success, should stop service4", function (done) {
+			composer.stopService('dummy', function (error) {
+				assert.ifError(error);
+				done();
+			});
+		});
 	});
 	
 	describe("invalid configuraiton tests", function(){
@@ -343,7 +462,7 @@ describe("testing composer", function () {
 		});
 	});
 
-	describe.skip("testing daemons", function() {
+	describe("testing daemons", function() {
 		afterEach(function(done){
 			setTimeout(function(){
 
