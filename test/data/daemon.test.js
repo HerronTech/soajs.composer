@@ -48,42 +48,42 @@ module.exports = {
 			"_apiInfo": {
 				"l": "Build Master Index"
 			}
-		}
+		},
 		
-		// "cleanUpProfileIndex": {
-		// 	"mw": __dirname + "/lib/mw/profile.js",
-		// 	"_apiInfo": {
-		// 		"l": "Clean Profile Cities, Features & Categories from Autocomplete Indexes"
-		// 	}
-		// },
-		//
-		// "buildProfileAccessoriesIndex": {
-		// 	"mw": __dirname + "/lib/mw/profile.js",
-		// 	"_apiInfo": {
-		// 		"l": "Build Profile Categories, Cities, Features and Auto Complete Indexes"
-		// 	}
-		// },
-		//
-		// "buildProfilecategoryCitiesIndex": {
-		// 	"mw": __dirname + "/lib/mw/profile.js",
-		// 	"_apiInfo": {
-		// 		"l": "Build Profile Category_cities Indexes"
-		// 	}
-		// },
-		//
-		// "buildProfileIndex": {
-		// 	"mw": __dirname + "/lib/mw/profile.js",
-		// 	"_apiInfo": {
-		// 		"l": "Build Profile Addresses and Autocomplete Indexes"
-		// 	}
-		// },
-		//
-		// "fullTest": {
-		// 	"mw": __dirname + "/lib/mw/fullRun.js",
-		// 	"_apiInfo": {
-		// 		"l": "Build Both Master and Profile Indexes"
-		// 	}
-		// }
+		"cleanUpProfileIndex": {
+			"mw": __dirname + "/lib/mw/profile.js",
+			"_apiInfo": {
+				"l": "Clean Profile Cities, Features & Categories from Autocomplete Indexes"
+			}
+		},
+
+		"buildProfileAccessoriesIndex": {
+			"mw": __dirname + "/lib/mw/profile.js",
+			"_apiInfo": {
+				"l": "Build Profile Categories, Cities, Features and Auto Complete Indexes"
+			}
+		},
+
+		"buildProfilecategoryCitiesIndex": {
+			"mw": __dirname + "/lib/mw/profile.js",
+			"_apiInfo": {
+				"l": "Build Profile Category_cities Indexes"
+			}
+		},
+
+		"buildProfileIndex": {
+			"mw": __dirname + "/lib/mw/profile.js",
+			"_apiInfo": {
+				"l": "Build Profile Addresses and Autocomplete Indexes"
+			}
+		},
+
+		"fullTest": {
+			"mw": __dirname + "/lib/mw/fullRun.js",
+			"_apiInfo": {
+				"l": "Build Both Master and Profile Indexes"
+			}
+		}
 		
 	}
 };
