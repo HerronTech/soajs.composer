@@ -3,6 +3,11 @@
 module.exports = {
 	
 	"mw": function(req, res){
-		return res.soajs.returnAPIResponse(req, res, {error: ["error1!", "error2!", "error3!"]});
+		var errors = [
+			new Error("error1!"),
+			new Error("error2!"),
+			new Error("error3!")
+		];
+		return res.soajs.returnAPIResponse(req, res, {error: errors});
 	}
 };
