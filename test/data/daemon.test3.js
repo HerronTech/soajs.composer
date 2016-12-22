@@ -6,21 +6,22 @@ module.exports = {
 	"dbs": [
 		{
 			prefix: prefix,
-			name: "esClient",
+			name: "esClient2",
 			es: true
 		},
-		{
-			prefix: prefix,
-			name: "myDatabase",
-			multitenant: false,
-			mongo: true
-		}
+		// {
+		// 	prefix: prefix,
+		// 	name: "myDatabase",
+		// 	multitenant: false,
+		// 	mongo: true
+		// },
+		// {
+		// 	prefix: prefix,
+		// 	name: "myDatabase2",
+		// 	multitenant: true,
+		// 	mongo: true
+		// }
 	],
-	"injection": true,
-	"models":{
-	"path": __dirname + "/lib/model/",
-		"name": "mongo"
-	},
 	"esIndexes": {
 		"master": ["test_intersection"],
 		"profile": ["clean"]
@@ -29,6 +30,11 @@ module.exports = {
 		cpu: '',
 		memory: ''
 	},
+	"models":{
+		"path": __dirname + "/lib/model/",
+		"name": "es"
+	},
+	injection: true,
 	serviceName: "aggregator",
 	serviceGroup: "411AGG",
 	servicePort: 4060,

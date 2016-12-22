@@ -16,11 +16,6 @@ module.exports = {
 			mongo: true
 		}
 	],
-	"injection": true,
-	"models":{
-	"path": __dirname + "/lib/model/",
-		"name": "mongo"
-	},
 	"esIndexes": {
 		"master": ["test_intersection"],
 		"profile": ["clean"]

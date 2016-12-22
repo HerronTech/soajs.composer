@@ -45,7 +45,7 @@ var lib = {
 };
 
 module.exports = function (grunt) {
-	var tests ='test/integration/_server.test.js';
+	var tests = 'test/integration/_server.test.js';
 	//Loading the needed plugins to run the grunt tasks
 	var pluginsRootPath = lib.findRoot();
 	lib.loadTasks(grunt, pluginsRootPath, ['grunt-contrib-jshint', 'grunt-jsdoc', 'grunt-contrib-clean', 'grunt-mocha-test', 'grunt-env'
@@ -112,7 +112,8 @@ module.exports = function (grunt) {
 				APP_DIR_FOR_CODE_COVERAGE: '../test/coverage/instrument/',
 				SOAJS_SRVIP: '127.0.0.1',
 				SOAJS_ENV: 'dev',
-				SOAJS_TEST: true
+				SOAJS_TEST: true,
+				SOAJS_DAEMON_GRP_CONF: "tansa"
 			}
 		},
 		
@@ -191,7 +192,6 @@ module.exports = function (grunt) {
 	grunt.registerTask("test", ['clean', 'env:coverage', 'instrument', 'mochaTest:unit', 'mochaTest:integration']);
 	grunt.registerTask("coverage", ['clean', 'env:coverage', 'instrument', 'mochaTest:unit', 'mochaTest:integration', 'storeCoverage', 'makeReport', 'coveralls']);
 	//grunt.registerTask("coverage", ['clean', 'env:coverage', 'instrument', 'mochaTest:unit', 'mochaTest:integration', 'storeCoverage', 'makeReport']);
-	
 	
 	
 };

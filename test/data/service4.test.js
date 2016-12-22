@@ -90,18 +90,6 @@ module.exports = {
 			"imfv": {
 				"commonFields": ["start", "limit", "model"]
 			}
-		},
-		"/getfive": {
-			"method": "GET",
-			"_apiInfo": {
-				"l": "List Entries",
-				"group": "Entries",
-				"groupMain": true
-			},
-			"mw": __dirname + "/lib/mw/myMw5.js",
-			"imfv": {
-				"commonFields": ["start", "limit", "model"]
-			}
 		}
 	}
 };

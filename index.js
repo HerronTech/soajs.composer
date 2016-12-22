@@ -3,6 +3,7 @@ var composer = require("./lib/composer");
 
 module.exports = {
 	deploy: function (configLocation, callback) {
+		
 		var gConfig = require(configLocation);
 		var profileType = gConfig.type;
 		delete gConfig.type;
@@ -46,14 +47,14 @@ module.exports = {
 	stopService: function(serviceName, cb){
 		var context = composer.getContext(serviceName, 'service');
 		context.stop(cb);
-	}
+	},
 	
-	// getDaemon: function(daemoName){
-	// 	return composer.getContext(daemoName, 'daemon');
-	// },
-	//
-	// stopDaemon: function(daemoName, cb){
-	// 	var context = composer.getContext(daemoName, 'daemon');
-	// 	context.stop(cb);
-	// }
+	getDaemon: function(daemoName){
+		return composer.getContext(daemoName, 'daemon');
+	},
+
+	stopDaemon: function(daemoName, cb){
+		var context = composer.getContext(daemoName, 'daemon');
+		context.stop(cb);
+	}
 };
