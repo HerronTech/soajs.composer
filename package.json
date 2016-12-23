@@ -29,8 +29,6 @@
   },
   "dependencies": {
     "async": "1.5.2",
-    "elasticsearch": "*",
-    "elasticsearch-deletebyquery": "*",
-    "soajs": "0.3.x"
+    "soajs": "0.4.*"
   }
 }
