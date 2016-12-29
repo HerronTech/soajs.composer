@@ -26,7 +26,8 @@
     "grunt-env" : "*",
     "grunt-istanbul" : "*",
     "grunt-coveralls" : "*",
-    "request": "*"
+    "request": "*",
+    "shelljs": "*"
   },
   "dependencies": {
     "async": "1.5.2",
