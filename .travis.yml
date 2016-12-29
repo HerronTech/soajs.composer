@@ -4,6 +4,8 @@ node_js: 0.10
 
 services:
   - mongodb
+  - elasticsearch
+
 
 branches:
   only:
@@ -15,6 +17,7 @@ addons:
 
 before_script:
   - npm install -g grunt-cli
+  - sleep 10
 
-after_success:
+script:
   - grunt coverage
