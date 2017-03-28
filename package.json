@@ -36,6 +36,6 @@
   },
   "dependencies": {
     "async": "2.1.4",
-    "soajs": "0.4.*"
+    "soajs": "git+https://github.com/soajs/soajs.git#feature/sessionLess"
   }
 }
