@@ -488,13 +488,6 @@ describe("testing composer", function () {
 			});
 		});
 		
-		it("fail, no dbs", function (done) {
-			composer.deploy(__dirname + "/../data/invalid6.daemon.js", function (error) {
-				assert.ok(error);
-				done();
-			});
-		});
-		
 		it("fail, no config", function (done) {
 			composer.deploy(__dirname + "/../data/invalid7.daemon.js", function (error) {
 				assert.ok(error);
