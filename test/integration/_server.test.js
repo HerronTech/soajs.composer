@@ -5,7 +5,8 @@ var shell = require('shelljs');
 var sampleData = require("soajs.mongodb.data/modules/composer");
 
 describe("importing sample data", function () {
-
+	var controller;
+	
 	it("do import", function (done) {
 		shell.pushd(sampleData.dir);
 		shell.exec("chmod +x " + sampleData.shell, function (code) {
@@ -18,9 +19,13 @@ describe("importing sample data", function () {
 		});
 	});
 
-	after(function(){
-		console.log("test the composer");
-		require("./composer.test.js");
+	it("starting services for test", function(done){
+		controller = require("soajs.controller");
+		setTimeout(function () {
+			console.log("test the composer");
+			require("./composer.test.js");
+			done();
+		}, 2000);
 	});
 });
 

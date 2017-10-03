@@ -50,7 +50,7 @@ describe("testing composer", function () {
 		
 		it("success - call service get api", function (done) {
 			var params = {
-				uri: 'http://localhost:4060/',
+				uri: 'http://localhost:4000/dummy/',
 				headers: {
 					'Content-Type': 'application/json',
 					'key': helper.getKey()
@@ -69,7 +69,7 @@ describe("testing composer", function () {
 		
 		it("success - call service get api reuse connections", function (done) {
 			var params = {
-				uri: 'http://localhost:4060/',
+				uri: 'http://localhost:4000/dummy/',
 				headers: {
 					'Content-Type': 'application/json',
 					'key': helper.getKey()
@@ -85,7 +85,7 @@ describe("testing composer", function () {
 		
 		it("success - call service get api create es connection", function (done) {
 			var params = {
-				uri: 'http://localhost:4060/',
+				uri: 'http://localhost:4000/dummy/',
 				headers: {
 					'Content-Type': 'application/json',
 					'key': helper.getKey()
@@ -104,7 +104,7 @@ describe("testing composer", function () {
 		
 		it("success - call service get api reuse es connection", function (done) {
 			var params = {
-				uri: 'http://localhost:4060/',
+				uri: 'http://localhost:4000/dummy/',
 				headers: {
 					'Content-Type': 'application/json',
 					'key': helper.getKey()
@@ -123,7 +123,7 @@ describe("testing composer", function () {
 		
 		it("success - gets service schema", function (done) {
 			var params = {
-				uri: 'http://localhost:4060/schema',
+				uri: 'http://localhost:4000/dummy/schema',
 				headers: {
 					'Content-Type': 'application/json',
 					'key': helper.getKey()
@@ -156,7 +156,7 @@ describe("testing composer", function () {
 		
 		it("success - calls /get (old style service) route", function (done) {
 			var params = {
-				uri: 'http://localhost:4060/get',
+				uri: 'http://localhost:4000/dummy/get',
 				headers: {
 					'Content-Type': 'application/json',
 					'key': helper.getKey()
@@ -173,7 +173,7 @@ describe("testing composer", function () {
 		
 		it("success - call service get (old style) api create es connection", function (done) {
 			var params = {
-				uri: 'http://localhost:4060/get',
+				uri: 'http://localhost:4000/dummy/get',
 				headers: {
 					'Content-Type': 'application/json',
 					'key': helper.getKey()
@@ -192,7 +192,7 @@ describe("testing composer", function () {
 		
 		it("success - call service get (old style) api reuse es connection", function (done) {
 			var params = {
-				uri: 'http://localhost:4060/get',
+				uri: 'http://localhost:4000/dummy/get',
 				headers: {
 					'Content-Type': 'application/json',
 					'key': helper.getKey()
@@ -211,7 +211,7 @@ describe("testing composer", function () {
 		
 		it("success - call service get with mw info false", function (done) {
 			var params = {
-				uri: 'http://localhost:4060/gettwo',
+				uri: 'http://localhost:4000/dummy/gettwo',
 				headers: {
 					'Content-Type': 'application/json',
 					'key': helper.getKey()
@@ -227,7 +227,7 @@ describe("testing composer", function () {
 		
 		it("success - call service get with mw info.error", function (done) {
 			var params = {
-				uri: 'http://localhost:4060/getthree',
+				uri: 'http://localhost:4000/dummy/getthree',
 				headers: {
 					'Content-Type': 'application/json',
 					'key': helper.getKey()
@@ -243,7 +243,7 @@ describe("testing composer", function () {
 		
 		it("success - call service get with mw info.error as an array", function (done) {
 			var params = {
-				uri: 'http://localhost:4060/getfour',
+				uri: 'http://localhost:4000/dummy/getfour',
 				headers: {
 					'Content-Type': 'application/json',
 					'key': helper.getKey()
