@@ -31,11 +31,11 @@
     "mocha": "3.2.0",
     "request": "2.79.0",
     "shelljs": "0.7.5",
-    "soajs.controller": "1.0.*",
-    "soajs.mongodb.data": "1.0.*"
+    "soajs.controller": "2.0.*",
+    "soajs.mongodb.data": "2.0.*"
   },
   "dependencies": {
     "async": "2.1.4",
-    "soajs": "1.0.15"
+    "soajs": "2.0.0"
   }
 }
