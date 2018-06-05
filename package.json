@@ -36,6 +36,6 @@
   },
   "dependencies": {
     "async": "2.1.4",
-    "soajs": "git://github.com/soajs/soajs.git#develop"
+    "soajs": "2.0.8"
   }
 }
