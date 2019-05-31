@@ -1,7 +1,7 @@
 {
   "name": "soajs.composer",
   "description": "SOAJS Composer",
-  "version": "2.4.9",
+  "version": "2.4.10",
   "author": {
     "name": "soajs team",
     "email": "team@soajs.org"
@@ -39,6 +39,6 @@
   "dependencies": {
     "async": "2.1.4",
 
-    "soajs": "2.4.11"
+    "soajs": "2.4.12"
   }
 }
