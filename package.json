@@ -1,7 +1,7 @@
 {
   "name": "soajs.composer",
   "description": "SOAJS Composer",
-  "version": "2.4.10",
+  "version": "2.5.0",
   "author": {
     "name": "soajs team",
     "email": "team@soajs.org"
@@ -33,12 +33,12 @@
     "request": "2.79.0",
     "shelljs": "0.8.3",
 
-    "soajs.controller": "2.4.*",
+    "soajs.controller": "2.5.*",
     "soajs.mongodb.data": "2.1.*"
   },
   "dependencies": {
     "async": "2.1.4",
 
-    "soajs": "2.4.12"
+    "soajs": "2.5.0"
   }
 }
